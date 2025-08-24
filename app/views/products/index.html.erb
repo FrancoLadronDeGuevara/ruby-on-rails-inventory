@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+
+<h1>Products List</h1>
+<a href="<%= new_product_path %>" class="btn btn-primary mb-3">
+    <span class="fas fa-plus"></span> New Product
+</a>
+
+<%= link_to "Export to CSV", products_path(format: :csv), class: "btn btn-secondary mb-3 ms-2" %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Reference</th>
+      <th>Stock</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= product.name %></td>
+        <td><%= product.reference %></td>
+        <td><%= product.quantity %></td>
+        <td>
+          <%= link_to "Details", product_path(product), class: "btn btn-info btn-sm" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
