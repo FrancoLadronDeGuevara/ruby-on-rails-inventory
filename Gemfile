@@ -62,6 +62,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "rubyzip", "~> 2.3"
+gem "rubyzip", "~> 3.1"
 gem "axlsx"
 gem "axlsx_rails"
